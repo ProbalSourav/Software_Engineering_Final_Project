@@ -1,0 +1,73 @@
+/* Base layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f9ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2 {
+  color: #0055aa;
+  margin-bottom: 10px;
+}
+
+/* Navigation bar */
+nav {
+  background-color: #e6f2f8;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+nav a {
+  color: #0077aa;
+  margin-right: 10px;
+  padding: 6px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #cce4ee;
+  color: #005577;
+}
+
+/* Header section */
+header {
+  background-color: #daf0ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Alerts */
+.alert-info {
+  background-color: #eaf7ff;
+  border-left: 4px solid #3399cc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Blocks for content */
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+}
