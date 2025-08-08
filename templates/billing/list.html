@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Bills</h2>
+<ul>
+  {% for b in bills %}
+    <li>#{{ b.id }} - {{ b.patient.user.username }} - {{ b.total }} 
+      <a href="{% url 'download_bill' b.id %}">Download</a></li>
+  {% empty %}<li>No bills.</li>{% endfor %}
+</ul>
+{% endblock %}
