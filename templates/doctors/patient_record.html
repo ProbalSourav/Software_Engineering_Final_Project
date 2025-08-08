@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patient Record: {{ patient.user.get_full_name|default:patient.user.username }}</h2>
+<p>Symptoms: {{ patient.symptoms }}</p>
+<p>History: {{ patient.history|default:"-" }}</p>
+<h3>Appointments with you</h3>
+<ul>
+  {% for a in appts %}
+    <li>{{ a.date }} {{ a.time }} - {{ a.status }} ({{ a.reason }})</li>
+  {% empty %}<li>No records.</li>{% endfor %}
+</ul>
+{% endblock %}

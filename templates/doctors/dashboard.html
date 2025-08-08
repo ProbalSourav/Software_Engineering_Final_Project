@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Doctor Dashboard</h2>
+<h3>Appointments</h3>
+<ul>
+  {% for a in appointments %}
+    <li>{{ a.date }} {{ a.time }} - {{ a.patient.user.get_full_name|default:a.patient.user.username }} - {{ a.status }}
+      {% if a.status == 'Pending' %}
+        <a href="{% url 'doctor_appointment_set_status' a.id 'Approved' %}">Approve</a> |
+        <a href="{% url 'doctor_appointment_set_status' a.id 'Declined' %}">Decline</a>
+      {% endif %}
+      | <a href="{% url 'doctor_patient_record' a.patient.id %}">Patient record</a>
+    </li>
+  {% empty %}<li>No appointments.</li>{% endfor %}
+</ul>
+{% endblock %}
