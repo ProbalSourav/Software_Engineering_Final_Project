@@ -156,7 +156,7 @@ This project is licensed under the MIT License.
 If you use or distribute this project, please credit the original authors:
 
 - **Project Name**: Hospital Management System  
-- **Original Authors**: Team Vitality — Soumen Dhar, Probal Nath, Ashiqur Rahman  
+- **Original Authors**: Team Vitality — Probal Nath, Soumen Dhar,  Ashiqur Rahman  
 
 See the LICENSE file for detailed terms.
 
