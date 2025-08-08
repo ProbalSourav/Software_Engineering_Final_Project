@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<ul>
+  <li>Pending Patients: {{ stats.patients_pending }}</li>
+  <li>Pending Doctors: {{ stats.doctors_pending }}</li>
+  <li>Pending Appointments: {{ stats.appointments_pending }}</li>
+  <li>Today’s Appointments: {{ stats.appointments_today }}</li>
+</ul>
+<p>
+  <a class="btn btn-secondary" href="{% url 'approvals' %}">Approvals</a>
+  <a class="btn btn-secondary" href="{% url 'appointments_overview' %}">Appointments</a>
+  <a class="btn btn-secondary" href="{% url 'admin_billing_list' %}">Billing</a>
+  <a class="btn btn-secondary" href="{% url 'create_bill' %}">Create Bill</a>
+</p>
+{% endblock %}
