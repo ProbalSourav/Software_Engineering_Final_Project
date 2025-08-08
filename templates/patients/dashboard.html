@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Patient Dashboard</h2>
+<p>Status: {% if patient.approved %}Approved{% else %}Pending{% endif %}{% if patient.is_discharged %} | Discharged{% endif %}</p>
+<a class="btn btn-primary btn-sm" href="{% url 'create_appointment' %}">Create Appointment</a>
+<h3 class="mt-3">My Appointments</h3>
+<ul>
+  {% for a in appointments %}
+    <li>{{ a.date }} {{ a.time }} with Dr. {{ a.doctor.user.get_full_name|default:a.doctor.user.username }} - {{ a.status }}
+      {% if a.status in 'Pending Approved' %} <a href="{% url 'cancel_appointment' a.id %}">Cancel</a>{% endif %}
+    </li>
+  {% empty %}<li>No appointments.</li>{% endfor %}
+</ul>
+<h3>My Bills</h3>
+<ul>
+  {% for b in bills %}
+    <li>#{{ b.id }} Total: {{ b.total }} <a href="{% url 'download_bill' b.id %}">Download</a></li>
+  {% empty %}<li>No bills.</li>{% endfor %}
+</ul>
+{% endblock %}  
