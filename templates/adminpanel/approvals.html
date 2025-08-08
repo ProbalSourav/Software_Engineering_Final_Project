@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Approvals</h2>
+<h3>Patients</h3>
+<ul>
+  {% for p in pending_patients %}
+    <li>{{ p.user.username }} <a href="{% url 'approve_patient' p.id %}">Approve</a>
+      <a href="{% url 'discharge_patient' p.id %}">Discharge</a></li>
+  {% empty %}<li>No pending patients.</li>{% endfor %}
+</ul>
+<h3>Doctors</h3>
+<ul>
+  {% for d in pending_doctors %}
+    <li>{{ d.user.username }} ({{ d.specialization }}) <a href="{% url 'approve_doctor' d.id %}">Approve</a></li>
+  {% empty %}<li>No pending doctors.</li>{% endfor %}
+</ul>
+{% endblock %}
